@@ -1,4 +1,5 @@
 import { Phone, ArrowRight, Star, ShieldCheck, MapPin } from 'lucide-react';
+import dentalHeroImg from './assets/images/dental_procedure_hero_1790589947274.jpg';
 
 export default function Hero() {
   const waLink = "https://wa.me/60129492467?text=Hi!%20I%20would%20like%20to%20book%20an%20appointment%20at%20The%20Dentist@KL.";
@@ -66,7 +67,13 @@ export default function Hero() {
               {/* Main Pill-Shaped Image Container */}
               <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-white bg-slate-100">
                 <img
-                  src="/src/assets/images/dental_procedure_hero_1790589947274.jpg"
+                  src={dentalHeroImg}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.endsWith('/images/dental_hero.jpg')) {
+                      target.src = '/images/dental_hero.jpg';
+                    }
+                  }}
                   alt="Professional teeth whitening and dental care at The Dentist@KL"
                   className="w-full h-[380px] sm:h-[460px] object-cover object-center transform hover:scale-102 transition-transform duration-700"
                   referrerPolicy="no-referrer"

@@ -1,4 +1,5 @@
 import { CheckCircle2, Heart, Award, Sparkles } from 'lucide-react';
+import clinicReceptionImg from './assets/images/clinic_reception_interior_1790590787201.jpg';
 
 export default function About() {
   const waLink = "https://wa.me/60129492467?text=Hi!%20I%20would%20like%20to%20consult%20with%20the%20dentist%20at%20The%20Dentist@KL.";
@@ -18,7 +19,13 @@ export default function About() {
           <div className="lg:col-span-6 relative">
             <div className="relative overflow-hidden rounded-[2.5rem] shadow-xl border-4 border-stone-100 bg-stone-100">
               <img
-                src="/src/assets/images/clinic_reception_interior_1790590787201.jpg"
+                src={clinicReceptionImg}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.endsWith('/images/clinic_reception.jpg')) {
+                    target.src = '/images/clinic_reception.jpg';
+                  }
+                }}
                 alt="The Dentist@KL modern clinic reception counter and patient lounge at Menara Hap Seng"
                 className="w-full h-[400px] sm:h-[480px] object-cover"
                 referrerPolicy="no-referrer"
