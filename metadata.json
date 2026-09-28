@@ -1,0 +1,6 @@
+{
+  "name": "The Dentist@KL",
+  "description": "Premium dental clinic in Menara Hap Seng, Kuala Lumpur.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
